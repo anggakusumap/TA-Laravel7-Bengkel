@@ -27,3 +27,12 @@ Route::group(['prefix' => 'adminfrontoffice'], function () {
     Route::resource('pitstop', 'MasterPitstopController');
     Route::resource('diskon', 'MasterDiskonController');
 });
+
+// MODUL
+// ROUTE KEPEGAWAIAN
+Route::prefix('kepegawaian/dashboardpegawai')
+    ->namespace('Kepegawaian')
+    ->group(function() {
+        Route::get('/', 'DashboardpegawaiController@index')
+            ->name('dashboardpegawai');
+    });
